@@ -1,0 +1,2977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#071812">
+
+  <title>EcoPulse | Climate Action Made Personal</title>
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+
+  <!-- =====================================================
+       CSS
+       Everything that controls the appearance is in here.
+  ====================================================== -->
+
+  <style>
+
+    /* =========================
+       1. BASIC SETTINGS
+    ========================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --dark: #071812;
+      --dark-green: #0d2b1e;
+      --green: #1d7a50;
+      --green-light: #7ee0a6;
+      --lime: #d9ff72;
+      --white: #ffffff;
+      --paper: #fafbf6;
+      --cream: #f0efe5;
+      --text: #10241b;
+      --grey: #6e7a73;
+      --line: #d8ddd6;
+    }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", Arial, sans-serif;
+      background: var(--paper);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3,
+    .logo {
+      font-family: "Manrope", Arial, sans-serif;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+
+    /* =========================
+       2. NAVIGATION
+    ========================== */
+
+    header {
+      position: absolute;
+      z-index: 1000;
+      top: 0;
+      left: 7%;
+      right: 7%;
+
+      height: 80px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      color: white;
+    }
+
+    .logo {
+      color: white;
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .logo-symbol {
+      color: var(--lime);
+      margin-right: 8px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #c5d3cb;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .nav-button {
+      border: 1px solid #4a6557;
+      border-radius: 50px;
+      padding: 10px 18px;
+      color: white;
+    }
+
+    #menuButton {
+      display: none;
+
+      background: transparent;
+      color: white;
+
+      border: 1px solid #4a6557;
+      border-radius: 8px;
+
+      padding: 7px 11px;
+
+      font-size: 1.3rem;
+
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       3. HERO
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+
+      padding: 130px 7% 70px;
+
+      display: grid;
+
+      grid-template-columns:
+        1.1fr 0.9fr;
+
+      align-items: center;
+
+      background:
+        radial-gradient(
+          circle at 80% 45%,
+          #174f37 0%,
+          #0b2419 25%,
+          #071812 55%
+        );
+
+      color: white;
+
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 750px;
+      z-index: 2;
+    }
+
+    .small-label {
+      display: inline-block;
+
+      border: 1px solid #3b5548;
+      border-radius: 50px;
+
+      padding: 7px 13px;
+
+      color: #b9c9c0;
+
+      font-size: 0.7rem;
+      font-weight: 700;
+
+      letter-spacing: 0.1em;
+    }
+
+    .small-label span {
+      color: var(--lime);
+    }
+
+    .hero h1 {
+      margin: 30px 0 25px;
+
+      font-size: clamp(4rem, 7vw, 7rem);
+
+      line-height: 0.92;
+
+      letter-spacing: -0.07em;
+    }
+
+    .hero h1 em {
+      color: var(--green-light);
+      font-style: normal;
+    }
+
+    .hero-description {
+      max-width: 620px;
+
+      color: #a8b9af;
+
+      font-size: 1.05rem;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .primary-button {
+      display: inline-block;
+
+      background: var(--green);
+
+      color: white;
+
+      padding: 15px 21px;
+
+      text-decoration: none;
+
+      font-weight: 700;
+
+      transition: 0.2s;
+    }
+
+    .primary-button:hover {
+      background: #25885c;
+      transform: translateY(-2px);
+    }
+
+    .secondary-link {
+      color: #c8d6ce;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero-steps {
+      margin-top: 65px;
+
+      display: flex;
+      gap: 35px;
+    }
+
+    .hero-steps span {
+      color: var(--lime);
+
+      font-size: 0.7rem;
+
+      letter-spacing: 0.06em;
+    }
+
+    .hero-steps b {
+      color: #82958a;
+      margin-left: 6px;
+    }
+
+
+    /* =========================
+       4. EARTH VISUAL
+    ========================== */
+
+    .planet-area {
+      position: relative;
+
+      min-height: 560px;
+
+      display: grid;
+      place-items: center;
+    }
+
+    .orbit {
+      position: absolute;
+
+      width: 500px;
+      height: 390px;
+
+      border: 1px solid rgba(126, 224, 166, 0.2);
+
+      border-radius: 50%;
+
+      transform: rotate(-20deg);
+    }
+
+    .planet-glow {
+      position: absolute;
+
+      width: 350px;
+      height: 350px;
+
+      border-radius: 50%;
+
+      background: rgba(55, 180, 116, 0.15);
+
+      filter: blur(35px);
+    }
+
+    .earth {
+      width: 330px;
+      height: 330px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      font-size: 14rem;
+
+      background:
+        radial-gradient(
+          circle at 30% 25%,
+          #298d61,
+          #0e4d34 70%
+        );
+
+      box-shadow:
+        0 0 80px rgba(68, 210, 139, 0.18);
+
+      z-index: 2;
+
+      animation: floating 5s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    .focus-card {
+      position: absolute;
+
+      right: 0;
+      bottom: 60px;
+
+      width: 220px;
+
+      padding: 20px;
+
+      background: rgba(13, 43, 30, 0.94);
+
+      border: 1px solid #456554;
+
+      z-index: 3;
+    }
+
+    .focus-card small {
+      display: block;
+
+      color: #8fa499;
+
+      font-size: 0.6rem;
+
+      letter-spacing: 0.12em;
+    }
+
+    .focus-card strong {
+      display: block;
+      margin-top: 5px;
+    }
+
+    .focus-line {
+      height: 4px;
+
+      margin: 15px 0;
+
+      background: #345445;
+    }
+
+    .focus-line span {
+      display: block;
+
+      width: 65%;
+      height: 100%;
+
+      background: var(--lime);
+    }
+
+
+    /* =========================
+       5. GREEN TICKER
+    ========================== */
+
+    .ticker {
+      padding: 13px 20px;
+
+      background: var(--lime);
+
+      text-align: center;
+
+      font-family: "Manrope";
+      font-weight: 800;
+
+      font-size: 0.7rem;
+
+      letter-spacing: 0.12em;
+
+      word-spacing: 14px;
+
+      overflow: hidden;
+    }
+
+
+    /* =========================
+       6. GENERAL SECTIONS
+    ========================== */
+
+    .section {
+      padding: 110px 7%;
+    }
+
+    .section-label {
+      color: #62756b;
+
+      font-size: 0.67rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.15em;
+    }
+
+    .section-heading {
+      margin-top: 25px;
+
+      display: grid;
+
+      grid-template-columns:
+        1.2fr 0.8fr;
+
+      gap: 8%;
+
+      align-items: end;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+
+      font-size: clamp(2.8rem, 5vw, 5rem);
+
+      line-height: 1;
+
+      letter-spacing: -0.055em;
+    }
+
+    .section-heading h2 em {
+      color: var(--green);
+      font-style: normal;
+    }
+
+    .section-heading p {
+      color: var(--grey);
+      max-width: 500px;
+    }
+
+
+    /* =========================
+       7. GLOBAL WARMING CARDS
+    ========================== */
+
+    .climate-cards {
+      margin-top: 70px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .climate-card {
+      min-height: 360px;
+
+      padding: 30px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      border-right: 1px solid var(--line);
+
+      transition: 0.25s;
+    }
+
+    .climate-card:last-child {
+      border-right: none;
+    }
+
+    .climate-card:hover {
+      background: white;
+
+      transform: translateY(-5px);
+    }
+
+    .card-number {
+      color: #8c9892;
+      font-size: 0.65rem;
+    }
+
+    .climate-card h3 {
+      margin-bottom: 10px;
+
+      font-size: 1.7rem;
+    }
+
+    .climate-card p {
+      color: var(--grey);
+      font-size: 0.9rem;
+    }
+
+    .card-category {
+      color: #839088;
+
+      font-size: 0.63rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+    }
+
+
+    /* =========================
+       8. FACT SECTION
+    ========================== */
+
+    .fact-section {
+      background: var(--green);
+
+      color: white;
+    }
+
+    .fact-grid {
+      display: grid;
+
+      grid-template-columns:
+        0.8fr 1.2fr;
+
+      gap: 10%;
+
+      align-items: center;
+    }
+
+    .big-number {
+      color: var(--lime);
+
+      font-family: "Manrope";
+
+      font-size: clamp(5rem, 10vw, 10rem);
+
+      font-weight: 800;
+
+      line-height: 1;
+    }
+
+    .fact-content h2 {
+      font-size: clamp(2.5rem, 4vw, 4.5rem);
+
+      line-height: 1.05;
+
+      margin: 0 0 20px;
+    }
+
+    .fact-content p {
+      max-width: 600px;
+
+      color: #c6ded1;
+    }
+
+
+    /* =========================
+       9. CALCULATOR
+    ========================== */
+
+    .calculator-section {
+      background: var(--dark);
+
+      color: white;
+    }
+
+    .calculator-grid {
+      display: grid;
+
+      grid-template-columns:
+        0.85fr 1.15fr;
+
+      gap: 8%;
+
+      align-items: start;
+    }
+
+    .calculator-intro h2 {
+      margin: 25px 0;
+
+      font-size: clamp(2.8rem, 5vw, 5rem);
+
+      line-height: 1;
+
+      letter-spacing: -0.055em;
+    }
+
+    .calculator-intro h2 em {
+      color: var(--green-light);
+      font-style: normal;
+    }
+
+    .calculator-intro p {
+      max-width: 500px;
+
+      color: #98aa9f;
+    }
+
+    .benefits {
+      margin-top: 30px;
+
+      color: #b6c8bd;
+
+      line-height: 2;
+    }
+
+    .calculator {
+      background: #f3f4ec;
+
+      color: var(--text);
+
+      padding: 30px;
+    }
+
+    .calculator-title {
+      padding-bottom: 20px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      border-bottom: 1px solid #d5dbd3;
+
+      font-size: 0.65rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.12em;
+    }
+
+    .calculator label {
+      padding: 19px 0;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 20px;
+
+      align-items: center;
+
+      border-bottom: 1px solid #d5dbd3;
+    }
+
+    .calculator label strong,
+    .calculator label small {
+      display: block;
+    }
+
+    .calculator label small {
+      margin-top: 3px;
+
+      color: #849088;
+
+      font-size: 0.7rem;
+    }
+
+    .calculator input,
+    .calculator select {
+      width: 100%;
+
+      padding: 12px;
+
+      border: 1px solid #cdd5cd;
+
+      background: white;
+
+      color: var(--text);
+    }
+
+    .calculator input:focus,
+    .calculator select:focus {
+      outline: 2px solid #75b493;
+    }
+
+    .calculate-button {
+      width: 100%;
+
+      margin-top: 25px;
+
+      padding: 15px;
+
+      border: none;
+
+      background: var(--lime);
+
+      color: var(--text);
+
+      font-weight: 800;
+
+      cursor: pointer;
+
+      transition: 0.2s;
+    }
+
+    .calculate-button:hover {
+      background: #e5ff99;
+    }
+
+
+    /* =========================
+       10. RESULT
+    ========================== */
+
+    .result {
+      margin-top: 70px;
+
+      padding-top: 40px;
+
+      display: grid;
+
+      grid-template-columns:
+        0.85fr 1.15fr;
+
+      gap: 8%;
+
+      border-top: 1px solid #294638;
+    }
+
+    .result small {
+      color: #82988c;
+
+      font-size: 0.6rem;
+
+      letter-spacing: 0.12em;
+    }
+
+    #resultNumber {
+      display: block;
+
+      color: var(--lime);
+
+      font-family: "Manrope";
+
+      font-size: 5.5rem;
+
+      font-weight: 800;
+
+      line-height: 1;
+
+      letter-spacing: -0.07em;
+    }
+
+    .result-unit {
+      color: #94a79d;
+    }
+
+    .result h3 {
+      margin-top: 0;
+
+      font-size: 1.5rem;
+    }
+
+    .result p {
+      color: #94a79d;
+    }
+
+    .result-bar {
+      height: 5px;
+
+      margin-top: 25px;
+
+      background: #294638;
+    }
+
+    #resultProgress {
+      display: block;
+
+      width: 0;
+      height: 100%;
+
+      background: var(--lime);
+
+      transition: width 0.6s;
+    }
+
+
+    /* =========================
+       11. ACTIONS
+    ========================== */
+
+    .actions-section {
+      background: var(--cream);
+    }
+
+    .actions-grid {
+      margin-top: 65px;
+
+      display: grid;
+
+      grid-template-columns:
+        1.3fr 0.7fr;
+
+      gap: 55px;
+    }
+
+    .action-list {
+      border-top: 1px solid #cbd2ca;
+    }
+
+    .action {
+      padding: 22px 0;
+
+      display: grid;
+
+      grid-template-columns:
+        0 42px 45px 1fr;
+
+      align-items: center;
+
+      border-bottom: 1px solid #cbd2ca;
+
+      cursor: pointer;
+    }
+
+    .action input {
+      opacity: 0;
+    }
+
+    .checkbox-design {
+      width: 31px;
+      height: 31px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid #adb7b0;
+
+      color: transparent;
+
+      font-style: normal;
+    }
+
+    .action input:checked + .checkbox-design {
+      background: var(--green);
+
+      color: white;
+    }
+
+    .action-number {
+      color: #89968f;
+      font-size: 0.7rem;
+    }
+
+    .action-text strong {
+      display: block;
+    }
+
+    .action-text small {
+      display: block;
+
+      margin-top: 3px;
+
+      color: #78857e;
+    }
+
+
+    /* =========================
+       12. PROGRESS CARD
+    ========================== */
+
+    .progress-card {
+      padding: 38px;
+
+      background: var(--green);
+
+      color: white;
+
+      align-self: start;
+    }
+
+    .progress-card > small {
+      color: #afd0be;
+
+      font-size: 0.62rem;
+
+      letter-spacing: 0.12em;
+    }
+
+    .progress-number {
+      color: var(--lime);
+
+      font-size: 1.5rem;
+    }
+
+    #progressNumber {
+      font-family: "Manrope";
+
+      font-size: 6rem;
+
+      font-weight: 800;
+
+      letter-spacing: -0.08em;
+    }
+
+    .progress-bar {
+      height: 5px;
+
+      background: #3d8d67;
+
+      margin: 15px 0 30px;
+    }
+
+    #progressFill {
+      display: block;
+
+      width: 0;
+      height: 100%;
+
+      background: var(--lime);
+
+      transition: width 0.5s;
+    }
+
+    .progress-card p {
+      color: #c1d9cc;
+    }
+
+    #achievement {
+      display: block;
+
+      margin-top: 30px;
+
+      padding-top: 20px;
+
+      border-top: 1px solid rgba(255,255,255,0.2);
+
+      color: #bad0c4;
+
+      opacity: 0.45;
+    }
+
+    #achievement.unlocked {
+      color: var(--lime);
+
+      opacity: 1;
+    }
+
+
+    /* =========================
+       13. DAILY TIP
+    ========================== */
+
+    .tip-section {
+      background: var(--cream);
+
+      padding-top: 0;
+    }
+
+    .tip-box {
+      padding: 50px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr auto;
+
+      align-items: center;
+
+      gap: 30px;
+
+      background: var(--dark-green);
+
+      color: white;
+    }
+
+    .tip-box small {
+      color: #9eb2a7;
+
+      letter-spacing: 0.12em;
+    }
+
+    .tip-box h2 {
+      max-width: 900px;
+
+      margin-bottom: 0;
+
+      font-size: clamp(2rem, 3.6vw, 3.6rem);
+
+      line-height: 1.08;
+    }
+
+    #newTipButton {
+      width: 65px;
+      height: 65px;
+
+      border-radius: 50%;
+
+      border: 1px solid #587164;
+
+      background: transparent;
+
+      color: var(--lime);
+
+      font-size: 1.5rem;
+
+      cursor: pointer;
+
+      transition: 0.25s;
+    }
+
+    #newTipButton:hover {
+      transform: rotate(90deg);
+
+      border-color: var(--lime);
+    }
+
+
+    /* =========================
+       14. FOOTER
+    ========================== */
+
+    footer {
+      padding: 75px 7% 30px;
+
+      background: #06130e;
+
+      color: white;
+    }
+
+    .footer-top {
+      padding-bottom: 55px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      border-bottom: 1px solid #21372c;
+    }
+
+    footer h2 {
+      margin: 0;
+
+      font-size: clamp(2.7rem, 5vw, 5rem);
+
+      line-height: 1;
+
+      text-align: right;
+    }
+
+    footer h2 em {
+      color: var(--green-light);
+      font-style: normal;
+    }
+
+    .footer-bottom {
+      padding-top: 25px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      color: #71847a;
+
+      font-size: 0.7rem;
+    }
+
+
+    /* =========================
+       15. TABLET
+    ========================== */
+
+    @media (max-width: 900px) {
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+      }
+
+      .section-heading,
+      .calculator-grid,
+      .result,
+      .actions-grid,
+      .fact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .planet-area {
+        min-height: 480px;
+      }
+
+      .climate-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .climate-card {
+        min-height: 230px;
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--line);
+      }
+
+      .climate-card:last-child {
+        border-bottom: none;
+      }
+
+      .result {
+        gap: 30px;
+      }
+    }
+
+
+    /* =========================
+       16. MOBILE
+    ========================== */
+
+    @media (max-width: 650px) {
+
+      header {
+        left: 20px;
+        right: 20px;
+      }
+
+      #menuButton {
+        display: block;
+
+        z-index: 1001;
+      }
+
+      nav {
+        display: none;
+
+        position: fixed;
+
+        inset: 0;
+
+        background: var(--dark);
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        z-index: 1000;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      nav a {
+        font-size: 1.1rem;
+      }
+
+      .hero {
+        padding:
+          125px 20px
+          50px;
+      }
+
+      .hero h1 {
+        font-size: 3.7rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+      .hero-steps {
+        margin-top: 45px;
+
+        gap: 14px;
+
+        flex-wrap: wrap;
+      }
+
+      .planet-area {
+        min-height: 380px;
+      }
+
+      .earth {
+        width: 220px;
+        height: 220px;
+
+        font-size: 9.5rem;
+      }
+
+      .orbit {
+        width: 330px;
+        height: 260px;
+      }
+
+      .focus-card {
+        width: 175px;
+
+        right: 0;
+        bottom: 25px;
+      }
+
+      .section {
+        padding:
+          75px 20px;
+      }
+
+      .section-heading h2,
+      .calculator-intro h2 {
+        font-size: 2.8rem;
+      }
+
+      .climate-card {
+        padding:
+          25px 5px;
+      }
+
+      .calculator {
+        padding: 22px 18px;
+      }
+
+      .calculator label {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+      }
+
+      #resultNumber {
+        font-size: 4.5rem;
+      }
+
+      .action {
+        grid-template-columns:
+          0 38px 32px 1fr;
+      }
+
+      .progress-card {
+        padding: 30px 25px;
+      }
+
+      #progressNumber {
+        font-size: 5rem;
+      }
+
+      .tip-box {
+        padding: 35px 25px;
+
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top,
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      footer h2 {
+        text-align: left;
+      }
+    }
+
+  </style>
+</head>
+
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header>
+
+    <a href="#home" class="logo">
+      <span class="logo-symbol">◒</span>
+      EcoPulse
+    </a>
+
+
+    <button id="menuButton"
+            aria-label="Open navigation menu">
+      ☰
+    </button>
+
+
+    <nav id="navigation">
+
+      <a href="#problem">
+        The problem
+      </a>
+
+      <a href="#impact">
+        Your impact
+      </a>
+
+      <a href="#actions">
+        Take action
+      </a>
+
+      <a href="#impact"
+         class="nav-button">
+        Start now ↗
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero" id="home">
+
+
+      <div class="hero-content">
+
+        <div class="small-label">
+
+          <span>●</span>
+
+          A PERSONAL CLIMATE COMPANION
+
+        </div>
+
+
+        <h1>
+
+          Better choices.
+
+          <br>
+
+          <em>
+            Brighter planet.
+          </em>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+          Global warming is a global challenge,
+          but meaningful action can begin with
+          everyday choices.
+
+          EcoPulse helps you understand your
+          impact, discover practical solutions
+          and build climate-friendly habits.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+          <a href="#impact"
+             class="primary-button">
+
+            Explore your impact →
+
+          </a>
+
+
+          <a href="#problem"
+             class="secondary-link">
+
+            Learn about the problem ↓
+
+          </a>
+
+        </div>
+
+
+        <div class="hero-steps">
+
+          <span>
+            01
+            <b>MEASURE</b>
+          </span>
+
+          <span>
+            02
+            <b>UNDERSTAND</b>
+          </span>
+
+          <span>
+            03
+            <b>ACT</b>
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="planet-area">
+
+        <div class="planet-glow"></div>
+
+        <div class="orbit"></div>
+
+        <div class="earth">
+          🌍
+        </div>
+
+
+        <div class="focus-card">
+
+          <small>
+            TODAY'S FOCUS
+          </small>
+
+          <strong>
+            Travel smarter
+          </strong>
+
+          <div class="focus-line">
+            <span></span>
+          </div>
+
+          <small>
+            Build one better habit
+          </small>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- Moving-style information strip -->
+
+    <div class="ticker">
+
+      ENERGY ✦
+      TRANSPORT ✦
+      FOOD ✦
+      NATURE ✦
+      REUSE ✦
+      CLEAN ENERGY ✦
+      BETTER HABITS ✦
+
+    </div>
+
+
+
+    <!-- =====================================================
+         THE PROBLEM
+    ====================================================== -->
+
+    <section class="section"
+             id="problem">
+
+
+      <span class="section-label">
+
+        THE BIG PICTURE —
+
+      </span>
+
+
+      <div class="section-heading">
+
+        <h2>
+
+          Global problem.
+
+          <br>
+
+          <em>
+            Local possibilities.
+          </em>
+
+        </h2>
+
+
+        <p>
+
+          Greenhouse gases in the atmosphere
+          trap heat.
+
+          Human activities such as burning
+          fossil fuels, transport, industrial
+          activity and land-use change have
+          increased greenhouse-gas emissions.
+
+          Tackling the problem requires action
+          from governments, businesses,
+          communities and individuals.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="climate-cards">
+
+
+        <article class="climate-card">
+
+          <span class="card-number">
+            01
+          </span>
+
+
+          <div>
+
+            <h3>
+              ⚡ Energy
+            </h3>
+
+            <p>
+
+              Electricity, heating and industrial
+              processes can produce greenhouse-gas
+              emissions when they rely heavily on
+              fossil fuels.
+
+              Energy efficiency and lower-carbon
+              energy sources can help reduce them.
+
+            </p>
+
+          </div>
+
+
+          <span class="card-category">
+
+            POWER & HEAT
+
+          </span>
+
+        </article>
+
+
+
+        <article class="climate-card">
+
+          <span class="card-number">
+            02
+          </span>
+
+
+          <div>
+
+            <h3>
+              🚗 Transport
+            </h3>
+
+            <p>
+
+              Cars, aircraft, ships and other
+              forms of transport often depend on
+              fossil fuels.
+
+              Walking, cycling, public transport
+              and cleaner technologies can reduce
+              emissions where they are practical.
+
+            </p>
+
+          </div>
+
+
+          <span class="card-category">
+
+            HOW WE MOVE
+
+          </span>
+
+        </article>
+
+
+
+        <article class="climate-card">
+
+          <span class="card-number">
+            03
+          </span>
+
+
+          <div>
+
+            <h3>
+              🌱 Food & Nature
+            </h3>
+
+            <p>
+
+              Agriculture, food waste,
+              deforestation and land use all
+              influence greenhouse-gas emissions.
+
+              Protecting ecosystems and reducing
+              waste can form part of the solution.
+
+            </p>
+
+          </div>
+
+
+          <span class="card-category">
+
+            WHAT WE CONSUME
+
+          </span>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CLIMATE MESSAGE
+    ====================================================== -->
+
+    <section class="section fact-section">
+
+      <div class="fact-grid">
+
+        <div class="big-number">
+          1
+        </div>
+
+
+        <div class="fact-content">
+
+          <span class="section-label"
+                style="color:#b9d8c7;">
+
+            START WITH ONE THING —
+
+          </span>
+
+
+          <h2>
+
+            You don't have to change
+            everything today.
+
+          </h2>
+
+
+          <p>
+
+            Choose one realistic action,
+            practise it consistently and
+            build from there.
+
+            Individual actions alone cannot
+            solve climate change, but they
+            can complement wider changes in
+            energy, transport, industry,
+            policy and infrastructure.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CARBON ESTIMATOR
+    ====================================================== -->
+
+    <section class="section calculator-section"
+             id="impact">
+
+
+      <div class="calculator-grid">
+
+
+        <div class="calculator-intro">
+
+          <span class="section-label"
+                style="color:#81978b;">
+
+            YOUR FOOTPRINT —
+
+          </span>
+
+
+          <h2>
+
+            Turn habits into
+
+            <em>
+              useful insight.
+            </em>
+
+          </h2>
+
+
+          <p>
+
+            Use this simple educational calculator
+            to explore how different parts of your
+            lifestyle can contribute to your
+            estimated footprint.
+
+          </p>
+
+
+          <p>
+
+            The values are deliberately simplified
+            for this web project and should not be
+            treated as a professional carbon audit.
+
+          </p>
+
+
+          <div class="benefits">
+
+            ✓ Takes less than a minute
+
+            <br>
+
+            ✓ Gives personalised suggestions
+
+            <br>
+
+            ✓ No account required
+
+            <br>
+
+            ✓ Your choices stay in your browser
+
+          </div>
+
+        </div>
+
+
+
+        <form class="calculator"
+              id="carbonForm">
+
+
+          <div class="calculator-title">
+
+            <span>
+              IMPACT ESTIMATOR
+            </span>
+
+            <span>
+              01 / 01
+            </span>
+
+          </div>
+
+
+
+          <label>
+
+            <span>
+
+              <strong>
+                Weekly car travel
+              </strong>
+
+              <small>
+                Approximate miles
+              </small>
+
+            </span>
+
+
+            <input type="number"
+                   id="miles"
+                   value="80"
+                   min="0">
+
+          </label>
+
+
+
+          <label>
+
+            <span>
+
+              <strong>
+                Return flights per year
+              </strong>
+
+              <small>
+                Approximate number
+              </small>
+
+            </span>
+
+
+            <input type="number"
+                   id="flights"
+                   value="1"
+                   min="0">
+
+          </label>
+
+
+
+          <label>
+
+            <span>
+
+              <strong>
+                Typical diet
+              </strong>
+
+              <small>
+                Choose the closest option
+              </small>
+
+            </span>
+
+
+            <select id="diet">
+
+              <option value="2.6">
+                Meat most days
+              </option>
+
+              <option value="1.9"
+                      selected>
+                Mixed / some meat
+              </option>
+
+              <option value="1.3">
+                Vegetarian
+              </option>
+
+              <option value="1">
+                Plant based
+              </option>
+
+            </select>
+
+          </label>
+
+
+
+          <label>
+
+            <span>
+
+              <strong>
+                Home energy habits
+              </strong>
+
+              <small>
+                Rough self-assessment
+              </small>
+
+            </span>
+
+
+            <select id="energy">
+
+              <option value="2.2">
+                Higher use
+              </option>
+
+              <option value="1.6"
+                      selected>
+                Average
+              </option>
+
+              <option value="1.1">
+                Energy conscious
+              </option>
+
+            </select>
+
+          </label>
+
+
+
+          <button class="calculate-button"
+                  type="submit">
+
+            Calculate my estimate →
+
+          </button>
+
+        </form>
+
+      </div>
+
+
+
+      <!-- Result -->
+
+      <div class="result">
+
+        <div>
+
+          <small>
+            YOUR EDUCATIONAL ESTIMATE
+          </small>
+
+          <strong id="resultNumber">
+            —
+          </strong>
+
+          <span class="result-unit">
+            t CO₂e / year
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <h3 id="resultTitle">
+
+            Complete the estimator above.
+
+          </h3>
+
+
+          <p id="resultText">
+
+            Once you calculate your result,
+            EcoPulse will identify the largest
+            area in this simplified estimate
+            and suggest something you can explore.
+
+          </p>
+
+
+          <div class="result-bar">
+
+            <span id="resultProgress"></span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TAKE ACTION
+    ====================================================== -->
+
+    <section class="section actions-section"
+             id="actions">
+
+
+      <span class="section-label">
+
+        BUILD MOMENTUM —
+
+      </span>
+
+
+      <div class="section-heading">
+
+        <h2>
+
+          Progress beats
+
+          <br>
+
+          <em>
+            perfection.
+          </em>
+
+        </h2>
+
+
+        <p>
+
+          Choose a few actions that are
+          realistic for your circumstances.
+
+          Tick them off as you complete them.
+          Your progress is automatically saved
+          on your device.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="actions-grid">
+
+
+        <div class="action-list">
+
+
+          <label class="action">
+
+            <input type="checkbox"
+                   class="action-checkbox">
+
+            <i class="checkbox-design">
+              ✓
+            </i>
+
+            <span class="action-number">
+              01
+            </span>
+
+            <span class="action-text">
+
+              <strong>
+                Make one suitable journey without the car
+              </strong>
+
+              <small>
+                Walk, cycle or use public transport when practical.
+              </small>
+
+            </span>
+
+          </label>
+
+
+
+          <label class="action">
+
+            <input type="checkbox"
+                   class="action-checkbox">
+
+            <i class="checkbox-design">
+              ✓
+            </i>
+
+            <span class="action-number">
+              02
+            </span>
+
+            <span class="action-text">
+
+              <strong>
+                Reduce unnecessary energy use
+              </strong>
+
+              <small>
+                Switch off an unused light, charger or device.
+              </small>
+
+            </span>
+
+          </label>
+
+
+
+          <label class="action">
+
+            <input type="checkbox"
+                   class="action-checkbox">
+
+            <i class="checkbox-design">
+              ✓
+            </i>
+
+            <span class="action-number">
+              03
+            </span>
+
+            <span class="action-text">
+
+              <strong>
+                Try a plant-rich meal
+              </strong>
+
+              <small>
+                Build a meal around vegetables, grains or pulses.
+              </small>
+
+            </span>
+
+          </label>
+
+
+
+          <label class="action">
+
+            <input type="checkbox"
+                   class="action-checkbox">
+
+            <i class="checkbox-design">
+              ✓
+            </i>
+
+            <span class="action-number">
+              04
+            </span>
+
+            <span class="action-text">
+
+              <strong>
+                Reuse before replacing
+              </strong>
+
+              <small>
+                Repair, refill, borrow or donate when appropriate.
+              </small>
+
+            </span>
+
+          </label>
+
+
+
+          <label class="action">
+
+            <input type="checkbox"
+                   class="action-checkbox">
+
+            <i class="checkbox-design">
+              ✓
+            </i>
+
+            <span class="action-number">
+              05
+            </span>
+
+            <span class="action-text">
+
+              <strong>
+                Reduce avoidable food waste
+              </strong>
+
+              <small>
+                Plan meals and use food you already have.
+              </small>
+
+            </span>
+
+          </label>
+
+        </div>
+
+
+
+        <!-- Progress -->
+
+        <aside class="progress-card">
+
+          <small>
+            TODAY'S PROGRESS
+          </small>
+
+
+          <div class="progress-number">
+
+            <span id="progressNumber">
+              0
+            </span>
+
+            %
+
+          </div>
+
+
+          <div class="progress-bar">
+
+            <span id="progressFill"></span>
+
+          </div>
+
+
+          <h3 id="progressTitle">
+            Start small.
+          </h3>
+
+
+          <p id="progressText">
+
+            Pick your first action.
+            Every completed step moves
+            the dial.
+
+          </p>
+
+
+          <strong id="achievement">
+
+            ✦ ECOPULSE CHAMPION
+
+          </strong>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DAILY TIP
+    ====================================================== -->
+
+    <section class="section tip-section">
+
+
+      <div class="tip-box">
+
+
+        <div>
+
+          <small>
+            ONE IDEA FOR TODAY
+          </small>
+
+
+          <h2 id="dailyTip">
+
+            Use what you already own before
+            buying something new.
+
+          </h2>
+
+        </div>
+
+
+        <button id="newTipButton"
+                aria-label="Show another tip">
+
+          ↻
+
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+
+    <div class="footer-top">
+
+
+      <a href="#home"
+         class="logo">
+
+        <span class="logo-symbol">
+          ◒
+        </span>
+
+        EcoPulse
+
+      </a>
+
+
+      <h2>
+
+        Small steps.
+
+        <br>
+
+        <em>
+          Shared future.
+        </em>
+
+      </h2>
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+      <span>
+
+        EcoPulse — Educational climate web project
+
+      </span>
+
+
+      <span>
+
+        Built with HTML + CSS + JavaScript
+
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+
+       This controls:
+       - Mobile menu
+       - Carbon estimator
+       - Action checklist
+       - Progress
+       - Saving data
+       - Random tips
+  ====================================================== -->
+
+  <script>
+
+
+    /* =========================
+       MOBILE MENU
+    ========================== */
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const navigation =
+      document.getElementById("navigation");
+
+
+    menuButton.addEventListener(
+      "click",
+      function () {
+
+        navigation.classList.toggle("open");
+
+        if (navigation.classList.contains("open")) {
+
+          menuButton.textContent = "✕";
+
+        } else {
+
+          menuButton.textContent = "☰";
+
+        }
+
+      }
+    );
+
+
+    const navigationLinks =
+      document.querySelectorAll("#navigation a");
+
+
+    navigationLinks.forEach(
+      function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            navigation.classList.remove("open");
+
+            menuButton.textContent = "☰";
+
+          }
+        );
+
+      }
+    );
+
+
+
+    /* =========================
+       CARBON CALCULATOR
+    ========================== */
+
+    const carbonForm =
+      document.getElementById("carbonForm");
+
+
+    carbonForm.addEventListener(
+      "submit",
+      function (event) {
+
+
+        // Stop the page from refreshing.
+
+        event.preventDefault();
+
+
+
+        // Get information entered by the user.
+
+        const miles =
+          Math.max(
+            0,
+            Number(
+              document.getElementById("miles").value
+            ) || 0
+          );
+
+
+        const flights =
+          Math.max(
+            0,
+            Number(
+              document.getElementById("flights").value
+            ) || 0
+          );
+
+
+        const diet =
+          Number(
+            document.getElementById("diet").value
+          );
+
+
+        const energy =
+          Number(
+            document.getElementById("energy").value
+          );
+
+
+
+        /* ---------------------------------
+           SIMPLIFIED EDUCATIONAL VALUES
+        ---------------------------------- */
+
+        const driving =
+          miles * 52 * 0.0003;
+
+
+        const flying =
+          flights * 0.5;
+
+
+        const total =
+          driving +
+          flying +
+          diet +
+          energy;
+
+
+
+        /* ---------------------------------
+           CREATE AREAS
+        ---------------------------------- */
+
+        const areas = [
+
+          {
+            name: "road travel",
+
+            value: driving,
+
+            advice:
+              "For suitable journeys, explore walking, cycling, public transport or sharing a journey."
+          },
+
+
+          {
+            name: "air travel",
+
+            value: flying,
+
+            advice:
+              "Where practical, consider whether some journeys can be combined, taken less often or made another way."
+          },
+
+
+          {
+            name: "food choices",
+
+            value: diet,
+
+            advice:
+              "You could explore more plant-rich meals and ways to reduce avoidable food waste."
+          },
+
+
+          {
+            name: "home energy",
+
+            value: energy,
+
+            advice:
+              "Look for unnecessary energy use and consider practical efficiency improvements."
+          }
+
+        ];
+
+
+
+        // Sort from largest to smallest.
+
+        areas.sort(
+          function (a, b) {
+
+            return b.value - a.value;
+
+          }
+        );
+
+
+
+        /* ---------------------------------
+           SHOW RESULT
+        ---------------------------------- */
+
+        document.getElementById(
+          "resultNumber"
+        ).textContent =
+          total.toFixed(1);
+
+
+
+        document.getElementById(
+          "resultTitle"
+        ).textContent =
+          "Your largest area in this estimate is " +
+          areas[0].name +
+          ".";
+
+
+
+        document.getElementById(
+          "resultText"
+        ).textContent =
+          areas[0].advice +
+          " " +
+          areas[1].advice;
+
+
+
+        const barPercentage =
+          Math.min(
+            total / 10 * 100,
+            100
+          );
+
+
+        document.getElementById(
+          "resultProgress"
+        ).style.width =
+          barPercentage + "%";
+
+
+
+        /* ---------------------------------
+           SAVE DATA
+        ---------------------------------- */
+
+        const savedCalculator = {
+
+          miles: miles,
+
+          flights: flights,
+
+          diet: diet,
+
+          energy: energy
+
+        };
+
+
+        localStorage.setItem(
+
+          "ecopulseCalculator",
+
+          JSON.stringify(
+            savedCalculator
+          )
+
+        );
+
+      }
+    );
+
+
+
+    /* =========================
+       RESTORE CALCULATOR
+    ========================== */
+
+    try {
+
+      const previousCalculator =
+        JSON.parse(
+          localStorage.getItem(
+            "ecopulseCalculator"
+          )
+        );
+
+
+      if (previousCalculator) {
+
+        document.getElementById(
+          "miles"
+        ).value =
+          previousCalculator.miles;
+
+
+        document.getElementById(
+          "flights"
+        ).value =
+          previousCalculator.flights;
+
+
+        document.getElementById(
+          "diet"
+        ).value =
+          previousCalculator.diet;
+
+
+        document.getElementById(
+          "energy"
+        ).value =
+          previousCalculator.energy;
+
+      }
+
+    }
+
+    catch (error) {
+
+      console.log(
+        "No saved calculator data."
+      );
+
+    }
+
+
+
+    /* =========================
+       ACTION CHECKLIST
+    ========================== */
+
+    const actionCheckboxes =
+      Array.from(
+        document.querySelectorAll(
+          ".action-checkbox"
+        )
+      );
+
+
+
+    /* Restore saved actions */
+
+    try {
+
+      const savedActions =
+        JSON.parse(
+          localStorage.getItem(
+            "ecopulseActions"
+          )
+        ) || [];
+
+
+      actionCheckboxes.forEach(
+        function (checkbox, index) {
+
+          checkbox.checked =
+            Boolean(
+              savedActions[index]
+            );
+
+        }
+      );
+
+    }
+
+    catch (error) {
+
+      console.log(
+        "No saved actions."
+      );
+
+    }
+
+
+
+    /* Listen for changes */
+
+    actionCheckboxes.forEach(
+      function (checkbox) {
+
+        checkbox.addEventListener(
+          "change",
+          updateActionProgress
+        );
+
+      }
+    );
+
+
+
+    /* =========================
+       UPDATE ACTION PROGRESS
+    ========================== */
+
+    function updateActionProgress() {
+
+
+      const states =
+        actionCheckboxes.map(
+          function (checkbox) {
+
+            return checkbox.checked;
+
+          }
+        );
+
+
+
+      const completed =
+        states.filter(
+          function (state) {
+
+            return state === true;
+
+          }
+        ).length;
+
+
+
+      const percentage =
+        Math.round(
+
+          completed /
+          actionCheckboxes.length *
+          100
+
+        );
+
+
+
+      document.getElementById(
+        "progressNumber"
+      ).textContent =
+        percentage;
+
+
+
+      document.getElementById(
+        "progressFill"
+      ).style.width =
+        percentage + "%";
+
+
+
+      const progressTitle =
+        document.getElementById(
+          "progressTitle"
+        );
+
+
+      const progressText =
+        document.getElementById(
+          "progressText"
+        );
+
+
+      const achievement =
+        document.getElementById(
+          "achievement"
+        );
+
+
+
+      if (percentage === 0) {
+
+        progressTitle.textContent =
+          "Start small.";
+
+
+        progressText.textContent =
+          "Pick your first action. Every completed step moves the dial.";
+
+
+        achievement.classList.remove(
+          "unlocked"
+        );
+
+      }
+
+
+      else if (percentage < 100) {
+
+        progressTitle.textContent =
+          completed +
+          " of " +
+          actionCheckboxes.length +
+          " actions complete.";
+
+
+        progressText.textContent =
+          "Great progress. Keep choosing realistic actions you can maintain.";
+
+
+        achievement.classList.remove(
+          "unlocked"
+        );
+
+      }
+
+
+      else {
+
+        progressTitle.textContent =
+          "Today's challenge complete!";
+
+
+        progressText.textContent =
+          "You completed every EcoPulse action. Consistency is more important than one perfect day.";
+
+
+        achievement.classList.add(
+          "unlocked"
+        );
+
+      }
+
+
+
+      /* Save checklist */
+
+      localStorage.setItem(
+
+        "ecopulseActions",
+
+        JSON.stringify(states)
+
+      );
+
+    }
+
+
+
+    // Show correct progress when
+    // the website first opens.
+
+    updateActionProgress();
+
+
+
+    /* =========================
+       RANDOM CLIMATE TIPS
+    ========================== */
+
+    const climateTips = [
+
+      "Use what you already own before buying something new.",
+
+      "Plan meals before shopping to help reduce avoidable food waste.",
+
+      "For one suitable short journey, consider leaving the car at home.",
+
+      "Switch off a device that would otherwise remain unused.",
+
+      "Try making one familiar meal more plant-rich.",
+
+      "Repair, refill, borrow or donate before replacing an item.",
+
+      "Learn what your local recycling service actually accepts.",
+
+      "Use a reusable bottle or cup when it is practical.",
+
+      "Only boil the amount of water you actually need.",
+
+      "Share one practical environmental habit with a friend.",
+
+      "Before buying something new, ask whether you really need it.",
+
+      "Look for one simple way to reduce unnecessary energy use at home."
+
+    ];
+
+
+
+    const newTipButton =
+      document.getElementById(
+        "newTipButton"
+      );
+
+
+    const dailyTip =
+      document.getElementById(
+        "dailyTip"
+      );
+
+
+    newTipButton.addEventListener(
+      "click",
+      function () {
+
+
+        const randomNumber =
+          Math.floor(
+
+            Math.random() *
+            climateTips.length
+
+          );
+
+
+        dailyTip.textContent =
+          climateTips[randomNumber];
+
+      }
+    );
+
+
+  </script>
+
+</body>
+
+</html>
